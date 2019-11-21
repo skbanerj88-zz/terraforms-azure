@@ -14,13 +14,13 @@ resource "azurerm_virtual_network" "VPN" {
   subnet {
     name           = "subnet1"
     address_prefix = "${tostring(element(split(",", module.variables.addresses[0]),0))}"
-	security_group = "${azurerm_network_security_group.Security_Group.id}"
+	  security_group = "${azurerm_network_security_group.Security_Group.id}"
   }
 
   subnet {
     name           = "subnet2"
     address_prefix = "${tostring(element(split(",", module.variables.addresses[0]),1))}"
-	security_group = "${azurerm_network_security_group.Security_Group.id}"
+	  security_group = "${azurerm_network_security_group.Security_Group.id}"
   }
 
   subnet {
