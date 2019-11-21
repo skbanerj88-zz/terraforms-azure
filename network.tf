@@ -8,8 +8,8 @@ resource "azurerm_virtual_network" "VPN" {
   name                = "VirtualNetwork_${local.environment}"
   location            = "${azurerm_resource_group.ResourceGroup.location}"
   resource_group_name = "${azurerm_resource_group.ResourceGroup.name}"
-  address_space       = ["10.0.0.0/16"]
-  dns_servers         = ["10.0.0.4", "10.0.0.5"]
+  address_space       = ["${module.variables.address_spaces[0]}"]
+  dns_servers         = ["${module.variables.dns_servers[0]}"]
 
   subnet {
     name           = "subnet1"
