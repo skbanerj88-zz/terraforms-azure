@@ -1,5 +1,5 @@
 variable "workspace_to_environment_map" {
-	type = "map"
+	
 
 	default = {
 		dev = "dev"
@@ -8,7 +8,7 @@ variable "workspace_to_environment_map" {
 }
 
 variable "environment_to_size_map" {
-	type = "map"
+	
 
 	default = {
 		dev = "small"
@@ -17,7 +17,7 @@ variable "environment_to_size_map" {
 }
 
 variable "workspace_to_size_map" {
-	type = "map"
+	
 
 	default = {
 		dev = "small"
