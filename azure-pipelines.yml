@@ -27,3 +27,10 @@ steps:
 - task: TerraformInstaller@0
   inputs:
     terraformVersion: '0.12.16'
+
+- task: Terraform@2
+  inputs:
+    TemplatePath: '${build.ArtifactStagingDirectory}'
+    Arguments: 'plan'
+    InstallTerraform: false
+    UseAzureSub: false
