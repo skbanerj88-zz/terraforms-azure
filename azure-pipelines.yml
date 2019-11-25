@@ -28,3 +28,7 @@ steps:
 - task: TerraformInstaller@0
   inputs:
     terraformVersion: '0.12.16'
+
+- task: TerraformCLI@0
+  inputs:
+    command: 'validate'
