@@ -24,9 +24,7 @@ steps:
     buildType: 'current'
     downloadType: 'specific'
     downloadPath: '$(System.ArtifactsDirectory)'
-- task: Terraform@2
+
+- task: TerraformInstaller@0
   inputs:
-    TemplatePath: '.'
-    Arguments: 'plan'
-    InstallTerraform: true
-    UseAzureSub: false
+    terraformVersion: 'latest'
