@@ -30,6 +30,6 @@ steps:
 
 - task: TerraformCLI@0
   inputs:
-    command: 'plan'
+    command: 'init'
     workingDirectory: '${build.ArtifactStagingDirectory}'
-    commandOptions: '-input=false'
+    backendType: 'azurerm'
