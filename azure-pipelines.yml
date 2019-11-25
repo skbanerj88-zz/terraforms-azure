@@ -25,6 +25,10 @@ steps:
     downloadType: 'specific'
     downloadPath: '$(System.ArtifactsStagingDirectory)'
 
+- task: DownloadPipelineArtifact@2
+  inputs:
+    buildType: 'current'
+    targetPath: '$(Pipeline.Workspace)'
 - task: TerraformInstaller@0
   inputs:
     terraformVersion: '0.12.16'
