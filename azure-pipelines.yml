@@ -19,16 +19,11 @@ steps:
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
 
-- task: DownloadBuildArtifacts@0
+- task: CopyFiles@2
   inputs:
-    buildType: 'current'
-    downloadType: 'specific'
-    downloadPath: '$(System.ArtifactsStagingDirectory)'
+    Contents: '**'
+    TargetFolder: '${build.ArtifactStagingDirectory}'
 
-- task: DownloadPipelineArtifact@2
-  inputs:
-    buildType: 'current'
-    targetPath: '$(Pipeline.Workspace)'
 - task: TerraformInstaller@0
   inputs:
     terraformVersion: '0.12.16'
