@@ -32,3 +32,4 @@ steps:
   inputs:
     command: 'plan'
     workingDirectory: '${build.ArtifactStagingDirectory}'
+    commandOptions: '--input=false'
