@@ -1,2 +1,2 @@
 # terraforms-azure
- My Azure terraform code. Test
+ My Azure terraform code.
