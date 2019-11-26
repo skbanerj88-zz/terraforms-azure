@@ -23,11 +23,11 @@ steps:
   inputs:
     Contents: '**'
     TargetFolder: '${build.ArtifactStagingDirectory}'
+    CleanTargetFolder: true
 
 - task: Terraform@2
   inputs:
     TemplatePath: '${build.ArtifactStagingDirectory}'
     Arguments: 'plan'
     InstallTerraform: true
-    Version: '0.10.8'
     UseAzureSub: false
