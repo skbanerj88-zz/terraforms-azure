@@ -25,6 +25,19 @@ steps:
     TargetFolder: '${build.ArtifactStagingDirectory}'
     CleanTargetFolder: true
 
+- task: TerraformCLI@0
+  inputs:
+    command: 'init'
+    workingDirectory: '${build.ArtifactStagingDirectory}'
+    backendType: 'azurerm'
+    backendServiceArm: 'My Service Connection'
+    ensureBackend: true
+    backendAzureRmResourceGroupName: 'Terraform'
+    backendAzureRmStorageAccountName: 'skbanerj88tf'
+    backendAzureRmStorageAccountSku: 
+    backendAzureRmContainerName: 'tfstate'
+    backendAzureRmKey: 'qlAx5AZw9nJ0RVbQSrRKdQzoic2b0qqilmw3XtnEgdCs8FDSiV7UdYswBJXDmCY5c0iNALLX/PPQhpGqVpr9AQ=='
+
 - task: Terraform@2
   inputs:
     TemplatePath: '${build.ArtifactStagingDirectory}'
