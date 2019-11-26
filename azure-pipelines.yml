@@ -25,10 +25,8 @@ steps:
     TargetFolder: '${build.ArtifactStagingDirectory}'
     CleanTargetFolder: true
 
-- task: Terraform@2
+- task: PublishBuildArtifacts@1
   inputs:
-    TemplatePath: '${build.ArtifactStagingDirectory}'
-    Arguments: 'plan'
-    InstallTerraform: true
-    Version: '0.12.13'
-    UseAzureSub: false
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
