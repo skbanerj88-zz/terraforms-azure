@@ -25,22 +25,9 @@ steps:
     TargetFolder: '${build.ArtifactStagingDirectory}'
     CleanTargetFolder: true
 
-- task: AzureCLI@2
-  inputs:
-    azureSubscription: 'My Service Connection'
-    scriptType: 'batch'
-    scriptLocation: 'inlineScript'
-    inlineScript: 'az login'
-
-- task: Terraform@2
-  inputs:
-    TemplatePath: '${build.ArtifactStagingDirectory}'
-    Arguments: 'init'
-    InstallTerraform: true
-    UseAzureSub: false
 - task: Terraform@2
   inputs:
     TemplatePath: '${build.ArtifactStagingDirectory}'
     Arguments: 'plan'
-    InstallTerraform: false
+    InstallTerraform: true
     UseAzureSub: false
