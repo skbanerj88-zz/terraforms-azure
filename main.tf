@@ -12,7 +12,7 @@ locals {
 }
 
 module "variables" {
-	source = "git::https://github.com/skbanerj88/Terraform//variables"
+	source = "git::https://github.com/skbanerj88/terraforms-azure//variables"
 
 	environment = "${local.environment}"
 	size        = "${local.size}"
