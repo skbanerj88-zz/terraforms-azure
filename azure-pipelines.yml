@@ -30,4 +30,5 @@ steps:
     TemplatePath: '${build.ArtifactStagingDirectory}'
     Arguments: 'plan'
     InstallTerraform: true
+    Version: '0.12.13'
     UseAzureSub: false
