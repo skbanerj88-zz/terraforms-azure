@@ -23,6 +23,7 @@ steps:
   inputs:
     Contents: '**'
     TargetFolder: '${build.ArtifactStagingDirectory}'
+    CleanTargetFolder: true
 
 - task: Terraform@2
   inputs:
