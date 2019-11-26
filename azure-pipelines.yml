@@ -28,6 +28,12 @@ steps:
 - task: Terraform@2
   inputs:
     TemplatePath: '${build.ArtifactStagingDirectory}'
-    Arguments: 'plan'
+    Arguments: 'init'
     InstallTerraform: true
+    UseAzureSub: false
+- task: Terraform@2
+  inputs:
+    TemplatePath: '${build.ArtifactStagingDirectory}'
+    Arguments: 'plan'
+    InstallTerraform: false
     UseAzureSub: false
